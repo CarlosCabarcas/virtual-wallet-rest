@@ -1,5 +1,5 @@
 const express = require('express'), bodyParser = require('body-parser');
-const soap = require('strong-soap').soap;
+require('dotenv').config({path: __dirname + '/.env'});
 const ClientController = require('./src/Controllers/ClientController');
 const WalletController = require('./src/Controllers/WalletController');
 const PaymentController = require('./src/Controllers/PaymentController');
@@ -10,7 +10,6 @@ const paymentCtrl = new PaymentController();
 const app = express();
 app.use(bodyParser.json());
 
-// Define la ruta para consumir el servicio SOAP
 app.post('/CreateClient', async (req, res) => {
     let { document, names, email, phone } = req.body;
 
@@ -51,7 +50,6 @@ app.post('/GetBalance', async (req, res) => {
     res.send(response);
 });
 
-// Inicia el servidor
 app.listen(3000, () => {
   console.log('Servidor Express iniciado en el puerto 3000');
 });

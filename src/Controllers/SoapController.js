@@ -1,5 +1,5 @@
 const soap = require('strong-soap').soap;
-const url = 'http://localhost:8080/index.php?wsdl';
+const url = process.env.SOAP_URL;
 
 class SoapController {
     async soapRequest(action, requestArgs) {
