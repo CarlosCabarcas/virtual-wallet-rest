@@ -1,0 +1,15 @@
+{
+  "name": "virtual-wallet-rest",
+  "version": "1.0.0",
+  "description": "Virtual Wallet API REST",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Carlos Cabarcas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
